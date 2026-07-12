@@ -19,7 +19,7 @@ It inspects the actual page, builds plausible decision-makers from the product's
 ## Installation
 
 ```bash
-npx --yes github:Kappaemme-git/codex-startup-user-simulator-skill
+npx --yes codex-startup-user-simulator-skill@latest
 ```
 
 This installs the skill into:
