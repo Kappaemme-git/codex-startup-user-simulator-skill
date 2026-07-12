@@ -1,6 +1,6 @@
 {
   "name": "codex-startup-user-simulator-skill",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Codex skill that tests landing pages with five evidence-based simulated customer personas.",
   "license": "MIT",
   "author": "Francesco Mistero",

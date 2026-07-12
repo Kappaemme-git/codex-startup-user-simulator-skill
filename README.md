@@ -12,6 +12,7 @@ It inspects the actual page, builds plausible decision-makers from the product's
 - Separates observed evidence from inference and unknowns
 - Produces a comparable persona scorecard
 - Ranks five improvements by impact, effort, and confidence
+- Creates a polished standalone HTML report with a clickable Codex file link
 - Supports quick, deep, mobile, before/after, and copy modes
 - Clearly labels simulation instead of presenting it as real user research
 
@@ -66,6 +67,8 @@ The default report includes:
 5. Five prioritized fixes
 6. Fastest measurable experiment
 7. Simulation limitations
+
+Codex also creates a responsive HTML report in the workspace `outputs/` directory and returns a clickable local link. The report includes expandable persona journeys, score visualizations, prioritized fixes, a printable layout, and a one-click “Save PDF” action.
 
 Scores are structured heuristics, not predicted conversion rates or analytics.
 

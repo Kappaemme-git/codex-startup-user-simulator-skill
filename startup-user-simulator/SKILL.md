@@ -1,6 +1,6 @@
 ---
 name: startup-user-simulator
-description: Simulate how five plausible customer personas experience a startup, SaaS, app, or landing page and explain why each would convert, hesitate, or leave. Use when Codex needs to test a live URL, localhost app, screenshot, prototype, or landing-page copy for positioning, first-impression clarity, relevance, trust, objections, conversion friction, CTA effectiveness, mobile experience, or prioritized improvements before launch.
+description: Simulate how five plausible customer personas experience a startup, SaaS, app, or landing page, explain why each would convert, hesitate, or leave, and produce a polished standalone HTML report. Use when Codex needs to test a live URL, localhost app, screenshot, prototype, or landing-page copy for positioning, first-impression clarity, relevance, trust, objections, conversion friction, CTA effectiveness, mobile experience, prioritized improvements, or a shareable launch-readiness report.
 ---
 
 # Startup User Simulator
@@ -8,6 +8,7 @@ description: Simulate how five plausible customer personas experience a startup,
 Evaluate a real product surface through five evidence-based simulated customers. Make the distinction between simulation and real user research explicit while producing concrete, prioritized fixes.
 
 Read [references/evaluation-framework.md](references/evaluation-framework.md) before scoring or writing the report.
+Read [references/report-artifact.md](references/report-artifact.md) before creating the final report file.
 
 ## Workflow
 
@@ -80,6 +81,17 @@ Lead with the result, not the methodology. Use this order:
 
 Keep the default report compact and visually scannable. Avoid generic advice such as “improve the design” or “add social proof”; specify the element, reason, persona affected, and proposed change.
 
+### 6. Create and open the report artifact
+
+- Always create a polished standalone HTML report unless the user explicitly asks for chat-only output.
+- Write the structured analysis as JSON using the schema in `references/report-artifact.md`.
+- Run `scripts/generate_report.py <analysis.json> <report.html>` from this skill directory.
+- Save the final file in the workspace `outputs/` directory by default, using a descriptive name such as `startup-user-simulation-example-com.html`.
+- Verify that the HTML exists and contains the verdict, five persona cards, prioritized fixes, experiment, and limitations.
+- Return a clickable absolute file link in the final response so the report opens from the Codex conversation.
+- Let the Codex app handle the local preview; do not launch an external system browser.
+- Treat the JSON as an intermediate artifact; keep it in a work or temporary directory unless the user asks for the raw data.
+
 ## Modes
 
 - **quick**: Inspect the primary page and return the verdict, scorecard, and top five fixes.
@@ -98,3 +110,4 @@ Use `quick` by default unless the user requests another mode.
 - Distinguish product problems from landing-page communication problems.
 - Prioritize changes a founder can actually implement.
 - End with the strongest next action, not a vague summary.
+- Deliver a report that remains readable on desktop, mobile, and when printed to PDF.
